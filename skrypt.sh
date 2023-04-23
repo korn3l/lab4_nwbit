@@ -13,11 +13,19 @@ function menu(){
 			done;;
 	("--help"|"-h")
 		echo "--date lub -d -> wyswietli dzisiejsza date"
-		echo "--logs lub -l <liczba> -> utworzy podana ilosc plikow log"
+		echo "--logs lub -l <liczba> -> utworzy podana ilosc plikow log";;
 	("--init")
 		git clone https://github.com/korn3l/lab4_nwbit
 		npath =$(pwd)
 		echo "export PATH=\$PATH:$npath" >> ~/.bashrc;;
+	("--error"|"-e")
+		for i in ($seq 1 $2)
+			do
+				echo "Plik stworozny przez skrypt.sh --eroor" > error${i}.txt
+				echo "error${i}.txt" >> error${i}.txt
+				echo ${i} >> log${i}.txt
+				echo "Data: $(+%d.%m.%Y)" >> log${i}.txt
+			done;;
 	esac
 }
 menu "$1" "$2"
