@@ -4,7 +4,7 @@ function menu(){
 	case "$1" in
 	("--date") echo "Dzisiejsza data: $(date +%d.%m.%Y)";
 	("--logs")
-		for i in {1..100}
+		for i in $(seq 1 $2)
 			do
 				echo "Plik stworzony przez skrypt.sh --logs" > log${i}.txt
 				echo "log${i}.txt" >> log${i}.txt
@@ -13,4 +13,4 @@ function menu(){
 			done;
 	esac
 }
-menu "$1"
+menu "$1" "$2"
