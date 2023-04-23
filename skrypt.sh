@@ -13,7 +13,9 @@ function menu(){
 			done;;
 	("--help"|"-h")
 		echo "--date lub -d -> wyswietli dzisiejsza date"
-		echo "--logs lub -l <liczba> -> utworzy podana ilosc plikow log";;
+		echo "--logs lub -l <liczba> -> utworzy podana ilosc plikow log"
+		echo "--init -> klonuje cale repozytorium"
+		echo "--error lub -e -> utworzy podana ilosc plikow error";;
 	("--init")
 		git clone https://github.com/korn3l/lab4_nwbit
 		npath =$(pwd)
