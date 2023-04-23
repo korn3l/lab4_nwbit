@@ -12,8 +12,12 @@ function menu(){
 				echo "Dzisiejsza data: $(date +%d.%m.%Y)" >> log${i}.txt
 			done;;
 	("--help"|"-h")
-		echo "--date -> wyswietli dzisiejsza date"
-		echo "--logs <liczba> -> utworzy podana ilosc plikow log"
+		echo "--date lub -d -> wyswietli dzisiejsza date"
+		echo "--logs lub -l <liczba> -> utworzy podana ilosc plikow log"
+	("--init")
+		git clone https://github.com/korn3l/lab4_nwbit
+		npath =$(pwd)
+		echo "export PATH=\$PATH:$npath" >> ~/.bashrc;;
 	esac
 }
 menu "$1" "$2"
